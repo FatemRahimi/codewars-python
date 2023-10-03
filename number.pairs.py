@@ -13,3 +13,19 @@ def get_larger_numbers(a, b):
         if (a[i]>b[i]):
             new[i]=a[i]
     return new
+
+
+# test
+import codewars_test as test
+from solution import get_larger_numbers
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        a = [13, 64, 15, 17, 88]
+        b = [23, 14, 53, 17, 80]
+        test.assert_equals(get_larger_numbers(a, b), [23, 64, 53, 17, 88], "Wrong result for a = {}, b = {}".format(a, b))
+        a = [34, -64, 15, 17, 88]
+        b = [23, 14, 53, 17, 80]
+        test.assert_equals(get_larger_numbers(a, b), [34, 14, 53, 17, 88], "Wrong result for a = {}, b = {}".format(a, b))
