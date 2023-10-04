@@ -24,3 +24,32 @@ def neutralise(s1, s2):
         else:
             result += "0"
     return result
+
+# test
+import codewars_test as test
+from solution import neutralise
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(neutralise("--++--", "++--++"), "000000")
+        test.assert_equals(neutralise("-+-+-+", "-+-+-+"), "-+-+-+")
+        test.assert_equals(neutralise("-++-", "-+-+"), "-+00")
+        test.assert_equals(neutralise("--++", "++++"), "00++")
+        test.assert_equals(neutralise("+++--+---", "++----++-"), "++0--000-")
+        test.assert_equals(neutralise("-----", "-----"), "-----")
+        test.assert_equals(neutralise("-+", "++"), "0+")
+        test.assert_equals(neutralise("--", "-+"), "-0")
+        test.assert_equals(neutralise("-++", "+--"), "000")
+        test.assert_equals(neutralise("++-++--++-", "-+++-++-++"), "0+0+0000+0")
+        test.assert_equals(neutralise("-++-+-++-", "+-++++---"), "00+0+000-")
+        test.assert_equals(neutralise("---++-+--", "-+++--++-"), "-00+0-+0-")
+        test.assert_equals(neutralise("+-----+++-", "--+-+-++--"), "0-0-0-++0-")
+        test.assert_equals(neutralise("+-----+-", "---++-++"), "0--00-+0")
+        test.assert_equals(neutralise("-+--+-+---", "-+--+-+-+-"), "-+--+-+-0-")
+        test.assert_equals(neutralise("+-+", "-++"), "00+")
+        test.assert_equals(neutralise("-++", "-+-"), "-+0")
+        test.assert_equals(neutralise("---+", "-+++"), "-00+")
+        test.assert_equals(neutralise("+--", "+--"), "+--")
+        test.assert_equals(neutralise("--+++-+-", "+++++---"), "00+++-0-")
