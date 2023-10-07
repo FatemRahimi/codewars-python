@@ -25,3 +25,16 @@ def solve(st):
         if i+1 not in c:
             return False
     return True
+
+# test
+from solution import solve
+import codewars_test as test
+
+@test.describe('Consecutive letters')
+def descr():
+    @test.it("Basic tests") 
+    def _():
+        test.assert_equals(solve("abc"),True)
+        test.assert_equals(solve("abd"), False)
+        test.assert_equals(solve("dabc"),True)
+        test.assert_equals(solve("abbc"), False)
