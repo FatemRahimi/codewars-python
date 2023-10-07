@@ -26,3 +26,14 @@ def solve(st):
             return False
     return True
 
+from solution import solve
+import codewars_test as test
+
+@test.describe('Consecutive letters')
+def descr():
+    @test.it("Basic tests") 
+    def _():
+        test.assert_equals(solve("abc"),True)
+        test.assert_equals(solve("abd"), False)
+        test.assert_equals(solve("dabc"),True)
+        test.assert_equals(solve("abbc"), False)
