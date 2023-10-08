@@ -43,3 +43,22 @@ def closing_in_sum(n):
         right -= 1
 
     return total
+
+# test
+import codewars_test as test
+from solution import closing_in_sum
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(closing_in_sum(121), 13)
+        test.assert_equals(closing_in_sum(1039), 22)
+        test.assert_equals(closing_in_sum(22225555), 100)
+        test.assert_equals(closing_in_sum(2520), 72)
+        test.assert_equals(closing_in_sum(5332824166496569), 331)
+        test.assert_equals(closing_in_sum(1979672314137318116), 485)
+        test.assert_equals(closing_in_sum(1795459644013947776), 548)
+        test.assert_equals(closing_in_sum(2801980378842185820), 426)
+        test.assert_equals(closing_in_sum(3440584288422776554), 430)
+        test.assert_equals(closing_in_sum(1985124000275401986), 342)

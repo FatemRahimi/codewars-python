@@ -26,6 +26,8 @@ def solve(st):
             return False
     return True
 
+# test
+
 from solution import solve
 import codewars_test as test
 
