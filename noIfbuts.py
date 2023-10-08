@@ -19,7 +19,7 @@ def no_ifs_no_buts(a, b):
         a < b: "smaller than",
         a > b: "greater than",
     }[True]
-    return f"{a} is {result} {b}"
+    return f"{b} is {result} {b}"
 
 # test
 import codewars_test as test
