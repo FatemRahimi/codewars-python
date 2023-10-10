@@ -12,3 +12,17 @@ def get_num(n):
     for i in str(n):
         sum += int(i)//4 if i=='8' else 0 if i not in '069' else 1
     return sum
+
+# tested
+import codewars_test as test
+from solution import get_num
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(get_num(300), 2, "Wrong output!")
+        test.assert_equals(get_num(90783), 4, "Wrong output!")
+        test.assert_equals(get_num(123321), 0, "Wrong output!")
+        test.assert_equals(get_num(89282350306), 8, "Wrong output!")
+        test.assert_equals(get_num(3479283469), 5, "Wrong output!")
