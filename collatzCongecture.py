@@ -20,3 +20,10 @@
 
 # hotpo(23) returns 15
 # 23 -> 70 -> 35 -> 106 -> 53 -> 160 -> 80 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+
+def hotpo(n):
+    cnt = 0
+    while n != 1:
+        n = 3 * n + 1 if n % 2 else n / 2
+        cnt += 1
+    return cnt
