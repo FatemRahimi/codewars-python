@@ -64,3 +64,20 @@ def f(s):
             if n: L[0]+=f"({c*n})"
             n=""
     return [x.rjust(max(map(len,L)),'-')for x in L]
+
+
+# test
+import codewars_test as test
+from solution import fruit_pack
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Example Test Cases')
+    def basic_test_cases():
+        test.assert_equals(fruit_pack(["63a21b"]),[['-(aaa)(b)', '{a}{b}{b}', '------[a]']])
+        test.assert_equals(fruit_pack(['2a']), [['(aa)', '----', '----']])
+        test.assert_equals(fruit_pack(['10a']), [['---', '{a}', '---']])
+        test.assert_equals(fruit_pack(['50a']), [['---', '---', '[a]']])
+        test.assert_equals(fruit_pack(['10a3b', '64j1k92i']), [['(bbb)', '--{a}', '-----'], ['--(jjjj)(k)(ii)', '{j}{i}{i}{i}{i}', '---------[j][i]']])
+        test.assert_equals(fruit_pack(['20f5j', '100x33y']), [['(jjjjj)', '-{f}{f}', '-------'], ['----(yyy)', '{y}{y}{y}', '---[x][x]']])
+        test.assert_equals
