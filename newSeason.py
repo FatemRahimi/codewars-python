@@ -13,3 +13,8 @@
 # Then the new season standings should
 
 # 1:'Leeds United' (first last season) 2:'Arsenal' (alphabetical) 3:'Coventry' (alphabetical) 4:'Liverpool' (alphabetical) 5:'Manchester City' (alphabetical)
+
+def premier_league_standings(teams):
+    dct = {1: teams[1]}
+    dct.update({i:t for i,t in enumerate(sorted(set(teams.values())-{teams[1]}), 2)})
+    return dct
