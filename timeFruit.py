@@ -48,4 +48,19 @@
 #                           '{j}{i}{i}{i}{i}',
 #                           '---------[j][i]']]
           
-       
+       fruit_pack=lambda a:list(map(f,a))
+
+def f(s):
+    L=["","",""]
+    n=o=""
+    for c in s:
+        if c.isdigit(): n+=c
+        else:
+            n=int(n)
+            a,n=divmod(int(n),50)
+            L[2]+=f"[{c}]"*a
+            a,n=divmod(int(n),10)
+            L[1]+=f"{{{c}}}"*a
+            if n: L[0]+=f"({c*n})"
+            n=""
+    return [x.rjust(max(map(len,L)),'-')for x in L]
