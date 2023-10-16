@@ -28,3 +28,22 @@ def to_day_of_year(date):
                 days += 31
      
     return days
+# tested
+
+import codewars_test as test
+from solution import to_day_of_year 
+
+@test.describe("Example")
+def test_group():
+    @test.it("test case")
+    def test_case():
+        test.assert_equals(to_day_of_year([25, 12, 2017]), 359,);
+        test.assert_equals(to_day_of_year([31, 10, 1991]), 304);
+        test.assert_equals(to_day_of_year([1, 5, 3000]), 121);
+        test.assert_equals(to_day_of_year([14, 3, 1066]), 73);
+        test.assert_equals(to_day_of_year([5, 11, 1604]), 310);
+
+        test.assert_equals(to_day_of_year([31, 12, 2000]), 366);
+        test.assert_equals(to_day_of_year([31, 12, 2001]), 365);
+        test.assert_equals(to_day_of_year([31, 12, 2004]), 366);
+        test.assert_equals(to_day_of_year([31, 12, 2100]), 365);
