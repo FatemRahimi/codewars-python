@@ -21,7 +21,8 @@ def solve(arr):
     return re[::-1]
 
 import codewars_test as test
-from solution import solve
+from solution 
+import solve
 
 # test
 
