@@ -12,3 +12,10 @@
 # More examples can be found in the test cases.
 
 # Good luck!
+
+def solve(arr): 
+    re = []
+    for i in arr[::-1]:
+        if i not in re:
+            re.append(i)
+    return re[::-1]
