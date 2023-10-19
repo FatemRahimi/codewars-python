@@ -23,6 +23,8 @@ def solve(arr):
 import codewars_test as test
 from solution import solve
 
+# test
+
 
 @test.describe("Basic Tests")
 def basic_tests():
