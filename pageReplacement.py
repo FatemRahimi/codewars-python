@@ -17,3 +17,15 @@
 #   * 2 is read, already in memory, nothing happens;
 #   * 5 is read, page fault --> memory = [4, 5, 3].
 # So, at the end we have the list [4, 5, 3], which is what you have to return. If not all the slots in the memory get occupied after applying the algorithm, fill the remaining slots (at the end of the list) with -1 to represent emptiness (note that the IDs will always be >= 1).
+def fifo(n, reference_list):
+    memory = [-1] * n
+    c = 0
+
+    for ref in reference_list:
+        if ref in memory:
+            continue
+
+        memory[c] = ref
+        c = (c + 1) % n
+
+    return memory
