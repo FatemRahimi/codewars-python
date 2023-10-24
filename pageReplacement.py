@@ -29,3 +29,27 @@ def fifo(n, reference_list):
         c = (c + 1) % n
 
     return memory
+
+
+    import codewars_test as test
+from solution import fifo
+
+@test.describe("Basic Tests")
+def basic_tests():
+    
+    @test.it("Basic Tests")
+    def basic_tests():
+        tests = [
+            [3, [1, 2, 3, 4, 2, 5], [4, 5, 3]],
+            [5, [], [-1, -1, -1, -1, -1]],
+            [4, [1, 2, 3, 3, 4, 5, 1], [5, 1, 3, 4]],
+            [4, [1, 1, 1, 2, 2, 3], [1, 2, 3, -1]],
+            [1, [5, 4, 3, 3, 4, 10], [10]],
+            [3, [1, 1, 1, 1, 1, 1, 1, 1], [1, -1, -1]],
+            [5, [10, 9, 8, 7, 7, 8, 7, 6, 5, 4, 3, 4, 3, 4, 5, 6, 5], [5, 4, 3, 7, 6]]
+        ]
+        
+        for t in tests:
+            test.assert_equals(fifo(t[0], t[1][:]), t[2], f"N = {t[0]}, REFERENCE LIST = {t[1]}")
+        
+        
