@@ -7,3 +7,10 @@
 # wasCalledWithNew().valueOf();        // false
 # (new wasCalledWithNew).valueOf();    // true
 # wasCalledWithNew.call({}).valueOf(); // false
+
+
+function wasCalledWithNew() {
+  const valueOf = () => true
+
+  return new.target ? { valueOf } : false
+}
