@@ -16,4 +16,44 @@
 #   * 4 is read, page fault --> memory = [4, 2, 3];
 #   * 2 is read, already in memory, nothing happens;
 #   * 5 is read, page fault --> memory = [4, 5, 3].
+<<<<<<< HEAD
 # So, at the end we have the list [4, 5, 3], which is what you have to return. If not all the slots in the memory get occupied after applying the algorithm, fill the remaining slots (at the end of the list) with -1 to represent emptiness (note that the IDs will always be >= 1).
+=======
+# So, at the end we have the list [4, 5, 3], which is what you have to return. If not all the slots in the memory get occupied after applying the algorithm, fill the remaining slots (at the end of the list) with -1 to represent emptiness (note that the IDs will always be >= 1).
+def fifo(n, reference_list):
+    memory = [-1] * n
+    c = 0
+
+    for ref in reference_list:
+        if ref in memory:
+            continue
+
+        memory[c] = ref
+        c = (c + 1) % n
+
+    return memory
+
+# tested
+    import codewars_test as test
+from solution import fifo
+
+@test.describe("Basic Tests")
+def basic_tests():
+    
+    @test.it("Basic Tests")
+    def basic_tests():
+        tests = [
+            [3, [1, 2, 3, 4, 2, 5], [4, 5, 3]],
+            [5, [], [-1, -1, -1, -1, -1]],
+            [4, [1, 2, 3, 3, 4, 5, 1], [5, 1, 3, 4]],
+            [4, [1, 1, 1, 2, 2, 3], [1, 2, 3, -1]],
+            [1, [5, 4, 3, 3, 4, 10], [10]],
+            [3, [1, 1, 1, 1, 1, 1, 1, 1], [1, -1, -1]],
+            [5, [10, 9, 8, 7, 7, 8, 7, 6, 5, 4, 3, 4, 3, 4, 5, 6, 5], [5, 4, 3, 7, 6]]
+        ]
+        
+        for t in tests:
+            test.assert_equals(fifo(t[0], t[1][:]), t[2], f"N = {t[0]}, REFERENCE LIST = {t[1]}")
+        
+        
+>>>>>>> origin/main
