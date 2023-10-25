@@ -14,3 +14,11 @@ function wasCalledWithNew() {
 
   return new.target ? { valueOf } : false
 }
+#  tested
+
+
+function wasCalledWithNew() {
+  const valueOf = () => true
+
+  return new.target ? { valueOf } : false
+}
