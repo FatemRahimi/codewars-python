@@ -19,3 +19,13 @@ function extractBits(field, offset, length) {
   let w = length >= 64 ? ~0n : (1n << BigInt(length)) - 1n;
   return field & w;
 }
+
+
+# 
+
+function extractBits(field, offset, length) {
+  const maxBits = 64n;
+  const limit = length + offset & 2n * maxBits - 1n;
+  const mask = 2n ** maxBits - 1n >> maxBits - limit;
+  return (field & mask) >> offset;
+}
