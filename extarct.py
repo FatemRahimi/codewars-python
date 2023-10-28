@@ -21,5 +21,10 @@ function extractBits(field, offset, length) {
 }
 
 
-# 
-
+# tested
+function extractBits(field, offset, length) {
+  const maxBits = 64n;
+  const limit = length + offset & 2n * maxBits - 1n;
+  const mask = 2n ** maxBits - 1n >> maxBits - limit;
+  return (field & mask) >> offset;
+}
