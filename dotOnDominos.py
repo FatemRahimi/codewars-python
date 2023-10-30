@@ -29,6 +29,24 @@ function dotsOnDominoBones(n){
    }
    return result
 }
+# tested
+const Test = require('@codewars/test-compat');
+
+describe("Basic Test:", function() {
+  it("tests", function() {
+    Test.assertEquals(dotsOnDominoBones(2), 12);
+    Test.assertEquals(dotsOnDominoBones(5), 105);
+    Test.assertEquals(dotsOnDominoBones(13), 1365);
+    Test.assertEquals(dotsOnDominoBones(20), 4620);
+    Test.assertEquals(dotsOnDominoBones(33), 19635);
+    Test.assertEquals(dotsOnDominoBones(50), 66300);
+    Test.assertEquals(dotsOnDominoBones(0), 0);
+    Test.assertEquals(dotsOnDominoBones(137), 1313967);
+    Test.assertEquals(dotsOnDominoBones(198), 3940200);
+  });
+});
+
+
 
 # If someone is interested, you can read the rules of the domino game here ;) Domino game
 
