@@ -19,3 +19,14 @@ function elevatorDistance(array) {
   }
   return distance;
 }
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(elevatorDistance([5,2,8]), 9);
+Test.assertEquals(elevatorDistance([1,2,3]), 2);
+Test.assertEquals(elevatorDistance([7,1,7,1]), 18);
+
+
+
+  });
+});
