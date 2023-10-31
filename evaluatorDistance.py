@@ -11,3 +11,11 @@
 # //distance travelled between them is 0
 # elevatorDistance([3,3]) = 0
 # Array will always contain at least 2 floors. Random tests will contain 2-20 elements in array, and floor values between 0 and 30
+
+function elevatorDistance(array) {
+  var distance = 0;
+  for (var i = 0; i < array.length - 1; i++) {
+    distance += Math.abs(array[i] - array[i + 1]);
+  }
+  return distance;
+}
