@@ -6,13 +6,19 @@
 
 # You should return the duplicate value as a single integer.
 
-function findDup( arr ){
-  arr.sort();
-  
-  for(let i = 0; i < arr.length; i += 1) {
-    if(arr[i] == arr[i+1]) {
-      return arr[i]
-    }
-  }
-}
+const Test = require('@codewars/test-compat');
 
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(findDup([1,2,2,3]), 2);
+Test.assertEquals(findDup([1,3,2,5,4,5,7,6]), 5);
+  });
+});
+const Test = require('@codewars/test-compat');
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(findDup([1,2,2,3]), 2);
+Test.assertEquals(findDup([1,3,2,5,4,5,7,6]), 5);
+  });
+});
