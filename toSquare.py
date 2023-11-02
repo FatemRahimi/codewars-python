@@ -16,7 +16,7 @@ function squareOrSquareRoot(array) {
   });  
 }
 
-
+# tested
 const Test = require('@codewars/test-compat');
 
 describe("Solution", function(){
