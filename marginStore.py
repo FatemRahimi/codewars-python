@@ -7,3 +7,5 @@ function mergeArrays(a, b) {
 }
 Best Practices7Clever1
  0ForkCompare with your solutionLink
+
+# tested
