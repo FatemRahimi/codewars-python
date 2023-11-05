@@ -25,3 +25,23 @@ const ownedCatAndDog = (...pets) => pets.map((petYears, i) => {
       
     return 2 + Math.floor((petYears - 24) / (4 + i));
 });
+
+# tested
+const Test = require('@codewars/test-compat');
+
+describe("Example Tests", function() {
+
+  it("one", function() {
+    Test.assertSimilar(ownedCatAndDog(15,15), [1,1]);
+  });
+
+  it("two", function() {
+    Test.assertSimilar(ownedCatAndDog(24,24), [2,2]);
+  });
+
+  it("ten", function() {
+    Test.assertSimilar(ownedCatAndDog(56,64), [10,10]);
+  });
+
+});
+
