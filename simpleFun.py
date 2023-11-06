@@ -24,3 +24,15 @@
 # [output] an integer
 
 # The number of words the boy has read.
+
+function timedReading(maxLength, text) {
+  const words = text.match(/[a-zA-Z]+/g) || [];
+    // count the words
+   let count = 0;
+   for (const word of words) {
+    if (word.length <= maxLength) {
+      count++
+    }
+  } 
+  return count
+}
