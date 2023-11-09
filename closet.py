@@ -23,3 +23,16 @@ function closest(arr){
   if (min !== 0 && set.has(min * -1)) { return null; }
   return min;
 }
+
+
+describe("simple tests", () =>{
+  Test.assertEquals(closest([10, 3, 9, 1]), 1)
+  Test.assertEquals(closest([2, 4, -1, -3]), -1)
+  Test.assertEquals(closest([13, 0, -6]), 0)
+  
+  it("should return None for 'doubles'", () =>{
+    Test.assertEquals(closest([5, 1, -1, 2, -10]), null)
+    Test.assertEquals(closest([5, 11, 11, 2, -1, 1]), null)
+  })
+  
+});
