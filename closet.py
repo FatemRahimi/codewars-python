@@ -10,3 +10,16 @@
 # [5, 2, -2]      => None
 # [5, 2, 2]       => 2
 # [13, 0, -6]     => 0
+
+
+function closest(arr){
+  let set = new Set(arr);
+  let min = Infinity;
+  
+  for (let i of set) {
+    if (Math.abs(i) < Math.abs(min)) { min = i; }
+  }
+  
+  if (min !== 0 && set.has(min * -1)) { return null; }
+  return min;
+}
