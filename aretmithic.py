@@ -8,3 +8,12 @@
 
 # Be sure to check out my Arithmetic sequence Kata first ;)
 # Don't forget about the indexing pitfall ;)
+
+
+var seqlist = function(first,c,l){
+  var result = [];
+  for(var i = 0, val = first; i < l; i++, val += c) {
+    result.push(val);
+  }
+  return result;
+}
