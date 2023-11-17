@@ -13,12 +13,14 @@
 # a - The number of shots that peter drinks.
 
 # return the probability that Peter won't have the trots after drinking. n will always be greater than x, and a will always be less than 
-function getChance(n, x, a){
-    let chance = 1;
-    while (a > 0) {
-        chance = (n - x) / n * chance;
-        n--;
-        a--;
-    }
-    return Math.round(chance * 100) / 100;
-}
+function getChance(n, x, a){ 
+  let event = n - x;
+  let probability = 1;
+  
+  //conditional and combined probability
+  for (let i = 0; i < a; i++) {
+    probability *= (event / n);
+    n--;
+    event--;
+  }
+  return N
