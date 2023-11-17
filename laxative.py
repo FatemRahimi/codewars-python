@@ -24,3 +24,21 @@ function getChance(n, x, a){
     event--;
   }
   return N
+
+#   tested
+
+  describe("testsSuite", function () {
+    const { approximately } = require('chai').assert;
+
+    function doTest(n, x, a, expected) {
+        const actual = getChance(n, x, a);
+        const message = `for n = ${n}, x = ${x}, a = ${a}\n`;
+        approximately(actual, expected, 1e-9, message);
+    }
+
+    it("sampleTests", function () {
+        doTest(  2,  1,  1, 0.5);
+        doTest(  4,  1,  3, 0.25);
+        doTest(100, 10, 10, 0.33);
+    });
+});
