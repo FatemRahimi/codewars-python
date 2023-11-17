@@ -20,3 +20,10 @@ function sexy_prime(x, y){
     return false;
   return Math.abs(x-y)==6
 }
+
+describe("Basic Tests", function(){
+        Test.assertEquals(sexy_prime(5, 11),true)
+        Test.assertEquals(sexy_prime(13, 19),true)
+        Test.assertEquals(sexy_prime(83, 89),true)
+        Test.assertEquals(sexy_prime(1, 11),false)
+});
