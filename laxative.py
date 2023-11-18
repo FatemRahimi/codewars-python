@@ -25,7 +25,7 @@ function getChance(n, x, a){
   }
   return N
 
-#   tested
+  
 
   describe("testsSuite", function () {
     const { approximately } = require('chai').assert;
