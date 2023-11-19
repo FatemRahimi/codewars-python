@@ -11,6 +11,8 @@
 
 # returns ['jaguar', 'kangaroo', 'camel', 'ostrich', 'deer']
 # Each element in the arrays will start with a unique letter so there will only be a single match for each element.
+
+# test
 function sortArray(a1, a2) {
     let newArr = [];
     for(let i = 0; i < a1.length; i++) { 
