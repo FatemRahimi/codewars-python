@@ -107,3 +107,6 @@
 # Developer Productivity: A guide to finding flow
 # Find out to harness your flow for more higher productivity.
 # © 2023 CodewarsAboutAPIBlogPrivacyTermsCode of ConductContact
+function isLeapYear(d, y) {
+  return d*y%1===0;
+}
