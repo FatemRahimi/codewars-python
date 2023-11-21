@@ -110,3 +110,17 @@
 function isLeapYear(d, y) {
   return d*y%1===0;
 }
+test
+const Test = require('@codewars/test-compat');
+
+describe("Basic Tests", function(){
+  it("should return if the given year is a leap year", function() {
+    Test.assertEquals(isLeapYear(365.25, 2018), false, '2018 is not a leap year on Earth');
+    Test.assertEquals(isLeapYear(365.25, 2020), true,  '2020 is a leap year on Earth');
+    Test.assertEquals(isLeapYear(124.5,   102), true,  '102 is a leap year on Earth');
+    Test.assertEquals(isLeapYear(124.125, 102), false, '102.125 is a leap year on Earth');
+  });
+});
+
+
+
