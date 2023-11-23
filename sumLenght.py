@@ -12,3 +12,17 @@ function sumLength (arr) {
   const len = arr.filter((x, i) => x < 0 || (x == 0 && (z++) % 2 == 0)).length;
   return `${sum} ${len}`
 }
+# test
+const Test = require('@codewars/test-compat');
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(sumLength([1,2,3,4,-1,-2,-3]), '10 3')
+Test.assertSimilar(sumLength([1,2,3,4,0,-1,-2,-3]), '10 4')
+Test.assertSimilar(sumLength([-1,2,3,4,0,1,0,-2,0,-3]), '10 5')
+Test.assertSimilar(sumLength([-1,-2,-3,-4,0,-1,0,-2,0,-3]), '0 9')
+Test.assertSimilar(sumLength([1,2,3,4,1,2,3]), '16 0')
+Test.assertSimilar(sumLength([0,0,0,0,0,0,0]), '0 4')
+Test.assertSimilar(sumLength([]), '0 0')
+  });
+});
