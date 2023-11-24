@@ -13,3 +13,12 @@
 
 # 16/4 = 4
 # 3. The mean (or average) of this list is 4
+
+var findAverage = function (nums) {
+  // Code here
+  var sum = 0;
+  for (num in nums) {
+    sum += nums[num];
+  }
+  return sum / (nums.length);
+}
