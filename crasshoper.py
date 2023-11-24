@@ -27,3 +27,13 @@ var findAverage = function (nums) {
 }var findAverage = function(nums){
   return nums.reduce((a, b) => a + b, 0) / nums.length;
 }
+
+
+const Test = require('@codewars/test-compat');
+
+describe('get average', function () {
+  it('should return the average', function () {
+    Test.assertEquals(findAverage([1]), 1)
+    Test.assertEquals(findAverage([1, 3, 5, 7]), 4)
+  })
+})
