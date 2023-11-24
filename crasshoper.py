@@ -28,7 +28,7 @@ var findAverage = function (nums) {
   return nums.reduce((a, b) => a + b, 0) / nums.length;
 }
 
-
+# tested
 const Test = require('@codewars/test-compat');
 
 describe('get average', function () {
