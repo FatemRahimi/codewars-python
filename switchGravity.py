@@ -34,3 +34,19 @@
 #   ["-", "#", "-", "#", "#", "-"],
 #   ["#", "#", "#", "#", "#", "-"]
 # ]
+
+def switch_gravity(a):
+    r = len(a)  # amount of rows
+    c = len(a[0])  # amount of cols
+    j = 0
+    while j <= c -1:
+        k = 0
+        while k < r - 1:  # use a buble sorting for each column
+            i = 0
+            while i < r - 1:
+                if a[i][j] < a[i+1][j]:
+                    a[i][j], a[i+1][j] = a[i+1][j], a[i][j]
+                i += 1
+            k +=1
+        j += 1
+    return a
