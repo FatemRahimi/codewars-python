@@ -14,3 +14,14 @@ def add_length(str_):
     for word in str_.split():
         answer.append(word + ' ' + str(len(word)))
     return answer
+import codewars_test as test
+from solution import add_length
+
+@test.describe("Add Length")
+def basic_tests():
+    @test.it("Sample Tests")
+    def _():
+        test.assert_equals(add_length('apple ban'),["apple 5", "ban 3"])
+        test.assert_equals(add_length('you will win'),["you 3", "will 4", "win 3"])
+        test.assert_equals(add_length('you'),["you 3"])
+        test.assert_equals(add_length('y'),["y 1"])
