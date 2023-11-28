@@ -38,3 +38,7 @@ def cat_mouse(map_, moves):
     distance = abs(cat[0] - mouse[0]) + abs(cat[1] - mouse[1])
     
     return 'Caught!' if distance <= moves else 'Escaped!'
+
+
+# test
+
