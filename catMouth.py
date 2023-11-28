@@ -21,3 +21,5 @@
 # ......m..
 
 # returns "Escaped!" because the cat cannot catch the mouse in  5 moves
+
+# solution
