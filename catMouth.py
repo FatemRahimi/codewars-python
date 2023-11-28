@@ -41,4 +41,43 @@ def cat_mouse(map_, moves):
 
 
 # test
+from textwrap import dedent
 
+import codewars_test as test
+from solution import cat_mouse
+
+
+@test.describe("Sample Tests")
+def sample_tests():
+    @test.it("Caught!")
+    def _():
+        map_ = dedent(
+            """\
+            ..C......
+            .........
+            ....m...."""
+        )
+        moves = 5
+        test.assert_equals(cat_mouse(map_, moves), "Caught!", f"map_:\n{map_}\n\nmoves:\n{moves}\n\nFailed")
+
+    @test.it("Escaped!")
+    def _():
+        map_ = dedent(
+            """\
+            .C.......
+            .........
+            ......m.."""
+        )
+        moves = 5
+        test.assert_equals(cat_mouse(map_, moves), "Escaped!", f"map_:\n{map_}\n\nmoves:\n{moves}\n\nFailed")
+
+    @test.it("boring without two animals")
+    def _():
+        map_ = dedent(
+            """\
+            ..C......
+            .........
+            ........."""
+        )
+        moves = 5
+        test.assert_equals(cat_mouse(map_, 5), "boring without two animals", f"map_:\n{map_}\n\nmoves:\n{moves}\n\nFailed")
