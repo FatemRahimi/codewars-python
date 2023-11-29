@@ -7,3 +7,7 @@
 
 # Notes
 # String str will never be null.
+
+import re
+def replace_dots(str):
+    return re.sub(r"\.", "-", str)
