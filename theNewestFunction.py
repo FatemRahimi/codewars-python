@@ -6,3 +6,18 @@
 const newFunction = function noWar() {
   return noWar;
 }
+# Test
+
+const { doesNotThrow } = require('chai').assert;
+
+describe("Tests suite", function () {
+  
+  const doTest = (func, message) => doesNotThrow(func, undefined, undefined, message);
+
+  it("sample tests", function () {
+    doTest(_ => newFunction(), 'Your function is not even a function!.\n');
+    doTest(_ => new newFunction(), 'Your function is old.\n');
+    doTest(_ => new new newFunction(), 'Your function is middle-aged.\n');
+    doTest(_ => new new new newFunction(), 'Your function is quite new, but not quite enough.\n');
+  });
+});
