@@ -5,3 +5,12 @@
 function whoIsPaying(name){
   return (name.length>2)?([name, name.substr(0,2)]):[name];
 }
+
+describe("Basic tests",() =>{
+Test.assertSimilar(whoIsPaying("Mexico"),["Mexico", "Me"]);
+Test.assertSimilar(whoIsPaying("Melania"),["Melania", "Me"]);
+Test.assertSimilar(whoIsPaying("Melissa"),["Melissa", "Me"]);
+Test.assertSimilar(whoIsPaying("Me"),["Me"]);
+Test.assertSimilar(whoIsPaying(""), [""]);
+Test.assertSimilar(whoIsPaying("I"), ["I"]);
+});
