@@ -37,7 +37,7 @@ const validateHello = greetings => {
   return false
 }
 
-test
+# test
 
 const hellos = {
 hello: 'english',
@@ -48,7 +48,7 @@ hola: 'spanish',
 ahoj: 'czech republic',
 czesc: 'polish',
 }
-
+test
 const validateHello = greetings => {
   for (key in hellos) {
    if (greetings.toLowerCase().includes(key)) {
@@ -57,3 +57,10 @@ const validateHello = greetings => {
   }
   return false
 }
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(validateHello('ahoj'), true);
+
+Test.assertEquals(validateHello('meh'), false);
+  });
+});
