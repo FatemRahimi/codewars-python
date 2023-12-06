@@ -18,3 +18,9 @@ class Person {
     return "$this->first_name $this->last_name";
   }
 }
+# 
+class PersonClassTest extends TestCase {
+  public function testThatPersonClassExists() {
+    $this->assertTrue(class_exists('Person'), "You have not yet defined the \"Person\" class");
+  }
+}
