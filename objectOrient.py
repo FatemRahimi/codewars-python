@@ -7,3 +7,14 @@
 # In the previous Kata of this series, we learned the fundamental concepts of Object-Oriented Programming (OOP) in PHP and its advantages over functional programming. We then proceeded to learn the syntax for defining classes in PHP and learned that you can define variables and functions (called "properties" and "methods") inside a class in which we can then access by creating objects (or instances of that class) from it.
 
 # However, last lesson, all the properties that we defined in a class had a predefined value. For example, you may remember that in the President class you defined, all presidents (i.e. all instances of your President class) had the name "Barack Obama". Not very useful is it? What if we could change and customize the names of our presidents, like such (see below)?
+class Person {
+  public $first_name;
+  public $last_name;
+  public function __construct($first_name, $last_name) {
+    $this->first_name = $first_name;
+    $this->last_name = $last_name;
+  }
+  public function get_full_name() {
+    return "$this->first_name $this->last_name";
+  }
+}
