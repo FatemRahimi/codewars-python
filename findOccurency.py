@@ -8,3 +8,10 @@
 
 # find_all([6, 9, 3, 4, 3, 82, 11], 3)
 # > [2, 4]
+
+def find_all(array, n):
+    res = []
+    for i in range(len(array)):
+        if array[i] == n:
+            res.append(i)
+    return res
