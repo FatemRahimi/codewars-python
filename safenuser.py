@@ -24,7 +24,7 @@ import codewars_test as test
 from solution import html_special_chars
 import string
 from random import randint, choices
-
+# tested
 @test.describe("Example")
 def test_group():
     @test.it("Testing Simple Examples")
