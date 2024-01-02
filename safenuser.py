@@ -10,3 +10,11 @@
 # & --> &amp;
 # Good luck :D
 
+ef html_special_chars(data):
+    specials = {
+        '<': '&lt;',
+        '>': '&gt;',
+        '\"': '&quot;',
+        '&': '&amp;',
+    }       
+    return ''.join(specials.get(char, char) for char in data)
