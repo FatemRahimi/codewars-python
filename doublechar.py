@@ -12,3 +12,4 @@ def double_char(s):
     for i in s:
         res += i*2
     return res
+#  test
