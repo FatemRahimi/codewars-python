@@ -7,3 +7,8 @@ Examples (Input -> Output):
 * "1234!_ "     -> "11223344!!__  "
 Good Luck!
 
+def double_char(s):
+    res = ''
+    for i in s:
+        res += i*2
+    return res
