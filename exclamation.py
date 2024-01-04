@@ -13,3 +13,13 @@
 # remove("!!!Hi !!hi!!! !hi",3) === "Hi !!hi!!! !hi"
 # remove("!!!Hi !!hi!!! !hi",5) === "Hi hi!!! !hi"
 # remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
+
+def remove(s, n):
+    liste=[]
+    k=1
+    for i in range(len(s)):
+            if s[i]=="!" and k<=n:
+                k+=1
+            else:
+                liste.append(s[i])
+    return "".join(liste)
