@@ -14,3 +14,5 @@
 #     +'10,11,12,13,14\n'
 #     +'20,21,22,23,24\n'
 #     +'30,31,32,33,34'
+
+toCsvText = lambda a: '\n'.join([','.join([str(e) for e in r]) for r in a])
