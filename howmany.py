@@ -25,3 +25,4 @@ def get_percentage(sent, limit = 1000):
     return "{}%".format(int(sent * 100 / limit))
 
 # tested
+
