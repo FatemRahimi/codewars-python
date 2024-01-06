@@ -23,3 +23,5 @@ def get_percentage(sent, limit = 1000):
     elif sent >= limit:
         return "Daily limit is reached"
     return "{}%".format(int(sent * 100 / limit))
+
+# tested
