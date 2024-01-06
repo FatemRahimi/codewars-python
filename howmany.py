@@ -26,3 +26,15 @@ def get_percentage(sent, limit = 1000):
 
 # tested
 
+import codewars_test as test
+from solution import get_percentage
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(get_percentage(101, 1000), "10%")
+        test.assert_equals(get_percentage(256, 500), "51%")
+        test.assert_equals(get_percentage(259), "25%")
+        test.assert_equals(get_percentage(0), "No e-mails sent")
+        test.assert_equals(get_percentage(1000, 1000), "Daily limit is reached")
