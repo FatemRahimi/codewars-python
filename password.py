@@ -22,3 +22,21 @@
 
 # helpZoom({1,0,1,1,0,0,0,0,0}) => "No" 
 # Since the given password isn't symmetric along centre point, so the answer is No.
+def help_zoom(key):
+    midpoint = len(key)//2
+    if len(key) % 2 != 0:
+        first = key[:midpoint]
+        second = key[midpoint+1:]
+        second = second[::-1]
+        if first == second:
+            return "Yes"
+        else:
+            return "No"
+    else:
+        first = key[:midpoint]
+        second = key[midpoint:]
+        second = second[::-1]
+        if first == second:
+            return "Yes"
+        else:
+            return "No"
