@@ -28,3 +28,15 @@ def rounders(value):
         value = round(value/10**i+.01) * 10**i
     return value
 
+
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals( rounders(15) , 20)
+        test.assert_equals( rounders(1234) , 1000)
+        test.assert_equals( rounders(1445) , 2000)
+        test.assert_equals( rounders(14) , 10)
+        test.assert_equals( rounders(99) , 100)
+        test.assert_equals( rounders(10) , 10)
