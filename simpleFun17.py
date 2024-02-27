@@ -25,6 +25,6 @@
 
 def rounders(value):
     for i in range(1, len(str(value))):
-        value = round(value/10**i+.01) * 10**i
+        value = (value/10**i+.01) * 10**i
     return value
 
