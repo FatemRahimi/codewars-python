@@ -28,7 +28,8 @@ def rounders(value):
         value = round(value/10**i+.01) * 10**i
     return value
 
-
+import codewars_test as test
+from solution import rounders
 
 @test.describe("Fixed Tests")
 def fixed_tests():
