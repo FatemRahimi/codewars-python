@@ -16,3 +16,4 @@
 
 
 
+areaOrPerimeter=(h,w)=>h^w?2*(h+w):w*w
