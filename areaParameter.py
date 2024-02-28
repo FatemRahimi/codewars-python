@@ -17,3 +17,16 @@
 
 
 areaOrPerimeter=(h,w)=>h^w?2*(h+w):w*w
+
+
+
+
+const Test = require('@codewars/test-compat');
+
+describe("Basic Tests", function(){ 
+it("It should works for basic tests.", function(){
+
+Test.assertEquals(areaOrPerimeter(4 , 4) , 16);
+Test.assertEquals(areaOrPerimeter(6 , 10) , 32);
+
+})})
