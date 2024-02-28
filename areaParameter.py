@@ -15,4 +15,4 @@
 # Advice: if your code length is much longer than the limit, giving up is also a good choice :D
 
 
-areaOrPerimeter=(l,w)=>l%w?2*(l+w):l*l
+
