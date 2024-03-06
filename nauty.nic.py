@@ -13,3 +13,15 @@
 #     }
 # }
 # Your function should return "Naughty!" or "Nice!" depending on the total number of occurrences in a given year (whichever one is greater). If both are equal, return "Nice!"
+
+const naughtyOrNice = (data) => {
+  let naughtyMeter = 0
+  
+  for (const month in data) {
+    for (const day in data[month]) {
+      naughtyMeter += data[month][day] === "Nice" ? 1 : -1
+    }
+  }
+
+  return naughtyMeter < 0 ? "Naughty!" : "Nice!"
+}
