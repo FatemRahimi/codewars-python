@@ -13,3 +13,6 @@
 # 0,2,3 -> false
 # 1,2,9 -> false 
 
+def is_triangle(a, b, c):
+    a, b, c = sorted([a, b, c])
+    return a + b > c
