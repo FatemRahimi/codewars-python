@@ -17,7 +17,7 @@ def is_triangle(a, b, c):
     a, b, c = sorted([a, b, c])
     return a + b > c
 
-
+solution
 # def is_triangle(a, b, c):
 #     """Determine if three sides of given lengths can form a triangle.
     
@@ -35,7 +35,7 @@ import codewars_test as test
 from solution import is_triangle
 
 @test.describe("Fixed Tests")
-def fixed_tests():
+def fixed_tests()
     @test.it('Basic Test Cases')
     def basic_test_cases():
         test.assert_equals(is_triangle(1, 2, 2), True, "didn't work when sides were 1, 2, 2")
