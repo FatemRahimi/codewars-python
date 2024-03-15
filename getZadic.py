@@ -45,3 +45,17 @@ ZODIAC = (
 def get_zodiac_sign(day, month):
     interval = int(f"{month}" + f"{day:02d}")
     return next((zodiac[2] for zodiac in ZODIAC if zodiac[0] <= interval <= zodiac[1]), "Unknown")
+
+
+
+import codewars_test as test
+from solution import get_zodiac_sign
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(get_zodiac_sign(10,10), 'Libra', "Expected 'Libra'")
+        test.assert_equals(get_zodiac_sign(1,5), 'Taurus', "Expected 'Taurus'")
+        test.assert_equals(get_zodiac_sign(6,9), 'Virgo', "Expected 'Virgo'")
+        test.assert_equals(get_zodiac_sign(25,11), 'Sagittarius', "Expected 'Sagittarius'")
