@@ -6,3 +6,13 @@
 
 # sort(['z', 'x', 'y'], [0, 2, 1]) => ['z', 'y', 'x']
 
+function sort(initialArray, sortingArray) {
+  var n = initialArray.length;
+  var result = [];
+  for (var i=0; i<n; i++) {
+    result[sortingArray[i]] = initialArray[i];
+  }
+  return result;
+}
+
+
