@@ -15,4 +15,13 @@ function sort(initialArray, sortingArray) {
   return result;
 }
 
+const Test = require('@codewars/test-compat');
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertDeepEquals(sort([1, 2, 3, 4, 5], [0, 2, 1, 4, 3]), [1, 3, 2, 5, 4]);
+  });
+});
+
+
 
