@@ -9,7 +9,7 @@
 function sort(initialArray, sortingArray) {
   var n = initialArray.length;
   var result = [];
-  for (var i=0; i<n; i++) {
+  for (var i=0; i<n++) {
     result[sortingArray[i]] = initialArray[i];
   }
   return result;
