@@ -9,19 +9,11 @@
 function sort(initialArray, sortingArray) {
   var n = initialArray.length;
   var result = [];
-  for (var i=0; i<n++) {
+  for (var i=0; i<n; i++) {
     result[sortingArray[i]] = initialArray[i];
   }
   return result;
 }
-
-const Test = require('@codewars/test-compat');
-
-describe("Tests", () => {
-  it("test", () => {
-Test.assertDeepEquals(sort([1, 2, 3, 4, 5], [0, 2, 1, 4, 3]), [1, 3, 2, 5, 4]);
-  });
-});
 
 
 
