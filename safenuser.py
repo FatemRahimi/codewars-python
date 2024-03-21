@@ -10,7 +10,7 @@
 # & --> &amp;
 # Good luck :D
 
-ef html_special_chars(data):
+def html_special_chars(data):
     specials = {
         '<': '&lt;',
         '>': '&gt;',
