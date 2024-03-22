@@ -19,3 +19,7 @@ def is_leap_year(d, y):
     t = 1 / x 
     print(t)
     return y % t == 0
+
+
+def is_leap_year(d, y):
+    return (d * y) % 1 == 0
