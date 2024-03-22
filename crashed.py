@@ -23,3 +23,17 @@ def is_leap_year(d, y):
 
 def is_leap_year(d, y):
     return (d * y) % 1 == 0
+
+
+from solution import is_leap_year
+import codewars_test as test
+
+@test.describe("Leap years on a distant planet")
+def leap_years_on_a_distant_planet():
+    
+    @test.it("Example tests")
+    def example_tests():
+        test.assert_equals(is_leap_year(365.25,  2018), False, '2018 is not a leap year on Earth')
+        test.assert_equals(is_leap_year(365.25,  2020), True,  '2020 is a leap year on Earth')
+        test.assert_equals(is_leap_year(124.5,    102), True,  '102 is a leap year on this planet')
+        test.assert_equals(is_leap_year(124.125,  102), False, '102.125 is not a leap year this planet')
