@@ -5,3 +5,7 @@
 # Same goes for all the other arrays/lists that you will get in the tests: you have to change the element positions with the same exact logics
 
 # Simples!
+
+def fix_the_meerkat(arr):
+    arr.reverse()
+    return arr
