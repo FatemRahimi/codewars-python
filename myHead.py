@@ -15,3 +15,15 @@ def fix_the_meerkat(arr):
     arr[0] = arr[2]
     arr[2]= temp
     return arr
+import codewars_test as test
+from solution import fix_the_meerkat
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(fix_the_meerkat(["tail", "body", "head"]), ["head", "body", "tail"])
+        test.assert_equals(fix_the_meerkat(["tails", "body", "heads"]), ["heads", "body", "tails"])
+        test.assert_equals(fix_the_meerkat(["bottom", "middle", "top"]), ["top", "middle", "bottom"])
+        test.assert_equals(fix_the_meerkat(["lower legs", "torso", "upper legs"]), ["upper legs", "torso", "lower legs"])
+        test.assert_equals(fix_the_meerkat(["ground", "rainbow", "sky"]), ["sky", "rainbow", "ground"])g
