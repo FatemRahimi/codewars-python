@@ -35,3 +35,11 @@
 # [output] an integer
 
 # Number of rectangles.
+
+def rectangles(n, m):
+  return n*m*(n-1)*(m-1)//4
+
+def rectangles(n, m):
+    s = lambda x: (1+x)*x//2
+    n -= 1; m -= 1
+    return s(n) * s(m)
