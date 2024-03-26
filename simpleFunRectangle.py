@@ -43,3 +43,17 @@ def rectangles(n, m):
     s = lambda x: (1+x)*x//2
     n -= 1; m -= 1
     return s(n) * s(m)
+
+import codewars_test as test
+from solution import rectangles
+
+@test.describe('Fixed Tests')
+def fixed_tests():
+    @test.it('Simple Cases')
+    def example_cases():
+        test.assert_equals(rectangles(2,3),3)
+        test.assert_equals(rectangles(2,2),1)
+        test.assert_equals(rectangles(1,1),0)
+        test.assert_equals(rectangles(0,1),0)
+        test.assert_equals(rectangles(3,3),9)
+        test.assert_equals(rectangles(100,100),24502500)
