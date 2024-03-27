@@ -6,3 +6,6 @@
 # arr = [2,4,6,8,1,2,5,4,3,2]
 
 # dropWhile(arr, isEven) == [1,2,5,4,3,2] # True
+
+def drop_while(arr, pred):
+    pass #your code here
