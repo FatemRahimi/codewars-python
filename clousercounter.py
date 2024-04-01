@@ -14,3 +14,29 @@ def counter():
         count += 1
         return count
     return function
+
+
+import codewars_test as test
+from solution import counter
+
+@test.describe("counter")
+def test_group():
+    @test.it("should return a function")
+    def function():
+        test.assert_equals(type(counter).__name__, 'function')
+    @test.it("should return 1 when the returned function is invoked")
+    def return_1():
+        test.assert_equals(counter()(), 1)
+    @test.it("should increment and return the number each time the function is invoked")
+    def increment():
+        counter_function = counter()
+        test.assert_equals(counter_function(), 1)
+        test.assert_equals(counter_function(), 2)
+    @test.it("should have two different accumulators if two counters are created")
+    def multi_accumulate():
+        counter_one = counter()
+        counter_two = counter()
+        test.assert_equals(counter_one(), 1)
+        test.assert_equals(counter_one(), 2)
+        test.assert_equals(counter_two(), 1)
+        test.assert_equals(counter_two(), 2)
