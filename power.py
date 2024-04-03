@@ -12,3 +12,17 @@ def number_to_pwr(number, p):
         n *= number
     return n
 
+import codewars_test as test
+import preloaded
+from solution import number_to_pwr
+
+@test.describe('Example Tests')
+def example_tests():
+    @test.it('Example Test Case')
+    def example_test_case():
+        test.assert_equals(number_to_pwr(4, 2), 16)
+        test.assert_equals(number_to_pwr(10, 4), 10000)
+        
+    @test.it('Edge Test Case')
+    def edge_test_case():
+        test.assert_equals(number_to_pwr(10, 0), 1)
