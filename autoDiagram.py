@@ -43,3 +43,11 @@
 
 # 9 This is footnote 9, and it's just as nonsensical as footnotes 2, 3, and 8, since it merely observes that 9 happens to be the bitwise exclusive-or of 2, 3, and 8.
 
+def trilingual_democracy(group: str) -> str:
+    
+    _set = set(group)
+    
+    if len(_set) == 1: return group[0]
+    if len(_set) == 3: return next(iter(set('DFIK') - _set))
+
+    return min(group, key=group.count)
