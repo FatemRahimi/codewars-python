@@ -38,3 +38,18 @@ public class Autodigigram {
     return Arrays.equals(list, counts);
   }
 }
+
+
+public class Autodigigram {
+  public static boolean validate(int base, int width, int[] list) {
+    int[] count = new int[list.length];
+    for (int n : list) {
+      for (int d=0; d<width; d++) {
+        count[n%base]++;
+        n/=base;
+      }
+    }
+    for (int i=0; i<list.length; i++) if (count[i] != list[i]) return false;
+    return true;
+  }
+}
