@@ -51,3 +51,17 @@ def trilingual_democracy(group: str) -> str:
     if len(_set) == 3: return next(iter(set('DFIK') - _set))
 
     return min(group, key=group.count)
+
+
+
+
+import codewars_test as test
+
+def do_test(group, want):
+    test.assert_equals(trilingual_democracy(group), want, "for group '"+group+"'")
+
+@test.it('Example tests')
+def example_tests():
+    do_test("FFF", "F")
+    do_test("IIK", "K")
+    do_test("DFK", "I")
