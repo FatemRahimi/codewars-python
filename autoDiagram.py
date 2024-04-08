@@ -23,3 +23,18 @@
 # list has the correct length, i.e. base elements
 # list contains only non-negative numbers
 # no number in list exceeds width when represented in base
+
+import java.util.Arrays;
+
+public class Autodigigram {
+  public static boolean validate(int base, int width, int[] list) {
+    int[] counts = new int[base];
+    for (int num: list) {
+      for (int i = 0; i < width; i++) {
+        counts[num % base]++;
+        num /= base;
+      }
+    }
+    return Arrays.equals(list, counts);
+  }
+}
