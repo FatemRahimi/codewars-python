@@ -1,55 +1,45 @@
-# (If this kata isn't hard enough, see Autodigigrams – Part 2.)
+# Trilingual democracy
+# Switzerland has four official languages: German, French, Italian, and Romansh.1
 
-# In this kata, you will write a program that checks whether a given list of integers is an autodigigram.
+# When native speakers of one or more of these languages meet, they follow certain regulations to choose a language for the group.2 Here are the rules for groups of exactly three3 people:4
 
-# The idea is inspired by autograms, which are self-referential sentences that correctly state how often each letter occurs in their words. For example:
+# When all three are native speakers of the same language, it also becomes their group's language.5a
 
-# This autogram contains five a's, one b, two c's, two d's, twenty-six e's, six f's, two g's, four h's, thirteen i's, one j, one k, one l, two m's, twenty-one n's, sixteen o's, one p, one q, five r's, twenty-seven s's, twenty t's, three u's, six v's, nine w's, five x's, five y's, and one z.
+# When two are native speakers of the same language, but the third person speaks a different language, all three will converse in the minority language.5b
 
-# Instead of sentences, we'll look at lists of numbers. If a list of integers correctly enumerates how often each digit occurs in it — i.e. the value at index d is equal to the total occurrence count of digit d — we'll call it an autodigigram.
+# When native speakers of three different languages meet, they eschew these three languages and instead use the remaining of the four official languages.5c
 
-# Your task is to write a program that checks whether a given list of integers is an autodigigram when its numbers are represented in a given base and width (possibly with leading zeros).
+# The languages are encoded by the letters D for Deutsch, F for Français, I for Italiano, and K for Rumantsch.6
 
-# Examples:
+# Your task is to write a function that takes a list of three languages and returns the language the group should use.7 8
 
-# [6, 2, 1, 0, 0, 0, 1, 0, 0, 0] is an autodigigram of decimal one-digit numbers because it contains six 0's, two 1's, one 2, one 6, and zero of the other digits.
-# [1B, 03, 00, 01, 00, 00, 00, 00, 00, 00, 00, 01, 00, 00, 00, 00] is an autodigigram of hexadecimal two-digit numbers that contains twenty-seven (1B in hexadecimal) 0's, three 1's, one 3, one B, and zero of the other hexadecimal digits.
-# [01000, 00010] is an autodigigram of binary five-digit numbers that contains eight 0's and two 1's.
-# [10, 02, 01] is an autodigigram of ternary two-digit numbers that contains three 0's, two 1's, and one 2.
-# You can assume (without having to check) that the input will satisfy the following conditions:
+# Examples:9
 
-# base ranges from 2 to 36
-# width ranges from 1 to 30
-# list has the correct length, i.e. base elements
-# list contains only non-negative numbers
-# no number in list exceeds width when represented in base
+# The language for a group of three native French speakers is French: FFF → F
 
-import java.util.Arrays;
+# A group of two native Italian speakers and a Romansh speaker converses in Romansh: IIK → K
 
-public class Autodigigram {
-  public static boolean validate(int base, int width, int[] list) {
-    int[] counts = new int[base];
-    for (int num: list) {
-      for (int i = 0; i < width; i++) {
-        counts[num % base]++;
-        num /= base;
-      }
-    }
-    return Arrays.equals(list, counts);
-  }
-}
+# When three people meet whose native languages are German, French, and Romansh, the group language is Italian: DFK → I
 
+# 1 The first sentence of the description and the first sentence of this footnote are true. Almost all other sentences in the description and the footnotes are complete hogwash.
 
-public class Autodigigram {
-  public static boolean validate(int base, int width, int[] list) {
-    int[] count = new int[list.length];
-    for (int n : list) {
-      for (int d=0; d<width; d++) {
-        count[n%base]++;
-        n/=base;
-      }
-    }
-    for (int i=0; i<list.length; i++) if (count[i] != list[i]) return false;
-    return true;
-  }
-}
+# 2 This footnote has no useful content. It was inserted solely to make the next footnote – at least in some sense – self-referential.
+
+# 3 Thou shalt count to three, no more, no less. Four shalt thou not count, neither count thou two, excepting that thou then proceed to three. Five is right out.
+
+# 4 These rules were carefully designed with a focus on practices that could be perceived as exclusive or discriminatory.
+
+# 5a The first rule is based on pragmatics and aesthetics: choosing a language other than the one spoken by all three would introduce gratuitous friction and asymmetry.
+
+# 5b The second rule is inspired by a strong sense of politeness and modesty: it would feel arrogant for the majority to impose its language upon the minority.
+
+# 5c The third rule originates from a deep belief in fairness: picking one of the languages spoken in the group would arbitrarily privilege one member and disadvantage the two others.
+
+# 6 The choice of the letter K for Rumantsch was an accident – during the linguistic rule standardization process in 1964 a typist at the Bundesamt für Organisation misread a hand-written R as K. Unfortunately, correcting this mistake would break backwards compatibility.
+
+# 7 The input argument of your function will always be a string (or an array, depending on programming language) of exactly three upper-case characters from the set D, F, I and K, and the return value of your function must be a single upper-case character from this set.
+
+# 8 This footnote is a deceptive non sequitur, as it erroneously claims that the multilingual people of Switzerland are united by a shared fondness for watchmaking, bit twiddling, the Basic Latin Unicode block, and Gruyère cheese.
+
+# 9 This is footnote 9, and it's just as nonsensical as footnotes 2, 3, and 8, since it merely observes that 9 happens to be the bitwise exclusive-or of 2, 3, and 8.
+
