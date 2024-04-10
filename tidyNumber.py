@@ -31,3 +31,9 @@
 # tidyNumber (2335) ==> return (true)
 # Explanation:
 # The number's digits {2 , 3, 3, 5} are in non-Decreasing Order , Note 3 <= 3
+
+
+
+def tidyNumber(n):
+    s = list(str(n))
+    return s == sorted(s)
