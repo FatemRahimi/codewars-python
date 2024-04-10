@@ -37,3 +37,18 @@
 def tidyNumber(n):
     s = list(str(n))
     return s == sorted(s)
+
+
+from solution import tidyNumber
+import codewars_test as test
+
+@test.describe("Basic Tests")
+def basic_tests():
+    
+    @test.it("Sample Tests")
+    def sample_tests():
+        
+        test.assert_equals(tidyNumber(12), True)
+        test.assert_equals(tidyNumber(102), False)
+        test.assert_equals(tidyNumber(9672), False)
+        test.assert_equals(tidyNumber(2789), True)
