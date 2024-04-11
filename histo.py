@@ -9,3 +9,8 @@
 # For input data [1, 1, 0, 1, 3, 2, 6] and binWidth=1 the result will be [1, 3, 1, 1, 0, 0, 1] as the data contains single element "0", 3 elements "1" etc.
 # For the same data and binWidth=2 the result will be [4, 2, 0, 1]
 # For input data [7] and binWidth=1 the result will be [0, 0, 0, 0, 0, 0, 0, 1]
+
+def histogram(lst, w):
+    lst = [n // w for n in lst]
+    m = max(lst, default=-1) + 1
+    return [lst.count(n) for n in range(m)]
