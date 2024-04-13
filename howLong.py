@@ -1,25 +1,8 @@
-# Input
-# You'll be given 4 arguments:
+# import math
 
-# 1. needed power
-# The power of the needed microwave.
-# Example: "600W"
-
-# 2. minutes
-# The number of minutes shown on the package.
-# Example: 4
-
-# 3. seconds
-# The number of seconds shown on the package.
-# Example: 20
-
-# 4. power
-# The power of your microwave.
-# Example: "800W"
-
-# Output
-# The amount of time you should cook the meal for formatted as a string.
-# Example: "3 minutes 15 seconds"
-
-# Note: the result should be rounded up.
-
+def cooking_time(needed_power, minutes, seconds, power):
+    needed_power = int(needed_power[:-1])
+    power = int(power[:-1])
+    time = minutes * 60 + seconds
+    res_time = math.ceil(time * needed_power / power)
+    return "{0} minutes {1} seconds".format(res_time // 60, res_time % 60)
