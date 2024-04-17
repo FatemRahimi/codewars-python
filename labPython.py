@@ -46,3 +46,8 @@ with open('car_fleet.csv') as csvFile:
             print(f'Skipped a row with incorrect format: {row}')
             continue
     print(f'Processed {lineCount} lines.')
+# Printing the car inventory
+for myCarProperties in myInventoryList:
+    for key, value in myCarProperties.items():
+        print("{} : {}".format(key, value))
+        print("-----")
