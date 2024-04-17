@@ -12,3 +12,7 @@ myVehicle = {
     "zeroSixty": 0.0,
     "mileage": 0
 }
+
+# Print initial dictionary values
+for key, value in myVehicle.items():
+    print("{} : {}".format(key, value))
