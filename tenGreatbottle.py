@@ -36,3 +36,53 @@ def ten_green_bottles(n):
     return ''.join(list1)
 
 
+def number_to_words(n):
+    num_words = {
+        1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five",
+        6: "Six", 7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten"
+    }
+    return num_words[n]
+
+def ten_green_bottles(n):
+    verses = []
+    for i in range(n, 0, -1):
+        number = number_to_words(i)
+        next_number = number_to_words(i - 1) if i > 1 else "no"
+        if i > 1:
+            verses.append(f"{number} green bottles hanging on the wall,")
+            verses.append(f"{number} green bottles hanging on the wall,")
+            verses.append("And if one green bottle should accidentally fall,")
+            if i - 1 > 1:
+                verses.append(f"There'll be {next_number.lower()} green bottles hanging on the wall.")
+            else:
+                verses.append(f"There'll be {next_number.lower()} green bottle hanging on the wall.")
+        else:
+            verses.append("One green bottle hanging on the wall,")
+            verses.append("One green bottle hanging on the wall,")
+            verses.append("If that one green bottle should accidentally fall,")
+            verses.append("There'll be no green bottles hanging on the wall.")
+        if i > 1:
+            verses.append("")  # Blank line between verses
+    return "\n".join(verses) + "\n"
+
+
+
+
+
+import codewars_test as test
+from solution import ten_green_bottles
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it("Basic Test Cases")
+    def basic_test_cases():
+        expected = "Two green bottles hanging on the wall,\n"\
+        "Two green bottles hanging on the wall,\n"\
+        "And if one green bottle should accidentally fall,\n"\
+        "There'll be one green bottle hanging on the wall.\n"\
+        "\n"\
+        "One green bottle hanging on the wall,\n"\
+        "One green bottle hanging on the wall,\n"\
+        "If that one green bottle should accidentally fall,\n"\
+        "There'll be no green bottles hanging on the wall.\n"
+        test.assert_equals(ten_green_bottles(2), expected)
