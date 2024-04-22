@@ -39,3 +39,7 @@ def pofi(n):
 #     odd  i
 #     0    1
 #     return 'i'
+
+# another way
+# def pofi(n):
+#     return ['1','i','-1','-i'][n%4]
