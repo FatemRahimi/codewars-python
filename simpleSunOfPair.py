@@ -19,3 +19,8 @@ def solve(n):
     a = int((len(str(n)) - 1) * '9')
     b = n - a
     return sum([int(i) for i in (list(str(a)) + list(str(b)))])
+
+
+def solve(n):
+    a = (len(str(n)) - 1) * '9' or '0'
+    return sum(map(int, a + str(n - int(a))))
