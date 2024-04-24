@@ -23,4 +23,15 @@ def solve(n):
 
 def solve(n):
     a = (len(str(n)) - 1) * '9' or '0'
-    return sum(map(int, a + str(n - int(a))))
+    return sum(map(int, a + str(n - int(a))))import codewars_test as test
+from solution import solve
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it("Basic Test Cases")
+    def basic_test_cases():
+        test.assert_equals(solve(18),18)
+        test.assert_equals(solve(29),11)
+        test.assert_equals(solve(45),18)
+        test.assert_equals(solve(1140),33)
+        test.assert_equals(solve(7019),35)
