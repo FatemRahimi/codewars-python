@@ -17,3 +17,17 @@ def numbers_of_letters(n):
     while result[-1] != "four":
         result.append(wordify(len(result[-1])))
     return result
+
+
+import codewars_test as test
+from solution import numbers_of_letters
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(numbers_of_letters(1), ["one", "three", "five", "four"])
+        test.assert_equals(numbers_of_letters(12), ["onetwo", "six", "three", "five", "four"])
+        test.assert_equals(numbers_of_letters(37), ["threeseven", "onezero", "seven", "five", "four"])
+        test.assert_equals(numbers_of_letters(311), ['threeoneone', 'oneone', 'six', 'three', 'five', 'four'])
+        test.assert_equals(numbers_of_letters(999), ["nineninenine", "onetwo", "six", "three", "five", "four"])
