@@ -40,3 +40,22 @@ There'll be {numbers[x-1]} green bottle{'' if x-1 == 1 else 's'} hanging on the 
 """
         res.append(s)
     return '\n'.join(res)
+
+
+import codewars_test as test
+from solution import ten_green_bottles
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it("Basic Test Cases")
+    def basic_test_cases():
+        expected = "Two green bottles hanging on the wall,\n"\
+        "Two green bottles hanging on the wall,\n"\
+        "And if one green bottle should accidentally fall,\n"\
+        "There'll be one green bottle hanging on the wall.\n"\
+        "\n"\
+        "One green bottle hanging on the wall,\n"\
+        "One green bottle hanging on the wall,\n"\
+        "If that one green bottle should accidentally fall,\n"\
+        "There'll be no green bottles hanging on the wall.\n"
+        test.assert_equals(ten_green_bottles(2), expected)
