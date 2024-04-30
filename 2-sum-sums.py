@@ -44,3 +44,19 @@ public class TwoSum
     return set.Sum();
   }
 }
+
+# seconde solution
+namespace SumSumTask
+{
+  using System;
+  using System.Linq;
+  
+  public class TwoSum
+  {
+    public int SumOfTwoSumTargets (int[] numbers, int min, int max)
+    {
+      var sum = numbers.Where(x => x < max).SelectMany((x, i) => numbers[(i + 1)..], (x, y) => x + y);
+      return Enumerable.Range(min, max - min).Intersect(sum).Sum();
+    }
+  }
+}
