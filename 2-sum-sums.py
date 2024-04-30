@@ -22,3 +22,25 @@
 # Both elements of the pair must be unique
 # Each target will be counted once, even though there may exist multiple pairs which add up to it
 # Your solution will be tested for performance
+
+using System.Collections.Generic;
+using System.Linq;
+  
+public class TwoSum
+{
+  public int SumOfTwoSumTargets (int[] numbers, int from, int to) 
+  {
+    var set = new HashSet<int>();
+    
+    for (var i = 0; i < numbers.Length; i++)
+    {
+      for (var j = i + 1; j < numbers.Length; j++)
+      {
+        var s = numbers[i] + numbers[j];
+        if (s >= from && s < to) set.Add(s);
+      }
+    }
+    
+    return set.Sum();
+  }
+}
