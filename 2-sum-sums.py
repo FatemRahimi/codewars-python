@@ -60,3 +60,20 @@ namespace SumSumTask
     }
   }
 }
+
+namespace SumSumTask {
+  using NUnit.Framework;
+  using System;
+  
+  [TestFixture]
+  public class AccountTest
+  {
+    [Test]
+    public void ValueTest1()
+    {
+      TwoSum t = new TwoSum();
+      var res = t.SumOfTwoSumTargets(new []{1,2}, 3, 4);
+      Assert.AreEqual(3, res);
+    }
+  }
+}
