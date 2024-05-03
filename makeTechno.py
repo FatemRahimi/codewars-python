@@ -1,16 +1,27 @@
-# German music producer Herbert Von Klunkerkunt has been using the same formula to make industrial techno for over twenty years. Producing at 120 beats per minute, each 4-beat bar contains:
+# This kata is a very basic introduction to compression.
 
-# 4 kick drum hits
-# 8 hihat hits
-# 2 clap hits
-# Write a programme that takes the number of minutes and returns the number of "kicks", "hihats" and "claps" Klunkerkunt will need to fill each bar of his new track with percussion in an array. The total number of kicks, hihats and claps should be rounded to the nearest integer.
+# Your task is to make a program which takes in a sentence and returns a string which shows the unique position of each word in the sentence. If a word appears more than once in the sentence, your string should return the position of the first occurrence of the word.
 
-# function perc (3) {}
-# // should return ["360 kicks", "720 hihats", "180 claps"]
-# The function should return "invalid track time" if the number of minutes is:
+# Unique position in this case means the position of the word excluding repeated words. Capitalisation of words should be accounted for: 'BEE' should be considered the same as 'bee'. The sentences include no punctuation.
 
-# less than 1
-# more than 100
-# not a number
-# function perc (0.22) {}
-# // should return "invalid track time"
+# Example
+# "man hello man"
+
+# becomes
+
+# "010"
+
+# Example
+# "THE ONE BUMBLE BEE one bumble the bee"
+
+# becomes
+
+# "01231203"
+
+# Example
+# "Ask not what your COUNTRY can do for you ASK WHAT YOU CAN DO FOR YOUR country"
+
+# becomes
+
+# "01234567802856734"
+
