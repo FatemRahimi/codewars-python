@@ -5,3 +5,9 @@
 # n = 1  ==> [1, 2]     # [2^0, 2^1]
 # n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
 # MATHEMATICSFUNDAMENTALS
+
+def powers_of_two(n):
+    a = []
+    for i in range(0, n + 1):
+        a.append(2 ** i)    
+    return a
