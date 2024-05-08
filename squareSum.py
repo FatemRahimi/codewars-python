@@ -2,5 +2,15 @@
 
 # # For example, for [1, 2, 2] it should return 9def square_sum(numbers):
    
+
+
+# def square_sum(numbers):
+#     return sum(x ** 2 for x in numbers)
+
+
+
 def square_sum(numbers):
-    return sum(x ** 2 for x in numbers)
+	res = 0
+	for num in numbers:
+   		res = res + num*num
+	return res
