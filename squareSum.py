@@ -14,3 +14,19 @@ def square_sum(numbers):
 	for num in numbers:
    		res = res + num*num
 	return res
+
+
+
+
+import codewars_test as test
+from solution import square_sum
+
+@test.describe("Fixed Tests")
+def basic_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(square_sum([1,2]), 5)
+        test.assert_equals(square_sum([0, 3, 4, 5]), 50)
+        test.assert_equals(square_sum([]), 0)
+        test.assert_equals(square_sum([-1,-2]), 5)
+        test.assert_equals(square_sum([-1,0,1]), 2)
