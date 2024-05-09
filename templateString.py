@@ -9,3 +9,14 @@
   
 def temple_strings(obj, feature): 
     return obj+" are "+feature
+
+
+import codewars_test as test
+from solution import temple_strings
+
+@test.describe('Example Tests')
+def example_tests():
+    test.assert_equals(temple_strings("Animals","Good"), 'Animals are Good')
+    test.assert_equals(temple_strings("Animals","Good"), 'Animals are Good')
+    test.assert_equals(temple_strings("You","Special"), 'You are Special')
+    test.assert_equals(temple_strings("lives","frozen"), 'lives are frozen')
