@@ -44,3 +44,22 @@
 # (["B"], ["B"]) ➞ True
 
 # (["_"], ["B"]) ➞ True
+
+
+def possibly_perfect(solutions, answers):
+    
+    pass_ans = 0
+    correct = 0
+    
+    for x,y in zip(solutions, answers):
+        
+        if x == '_':
+            
+            pass_ans += 1
+            continue
+            
+        if x == y:
+            
+            correct += 1
+            
+    return correct == 0 or correct == (len(solutions) - pass_ans)
