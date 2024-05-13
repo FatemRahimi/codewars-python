@@ -71,3 +71,17 @@ def cake_visualizer(s):
         space = ' ' * (len(row) // 2 - 1)
         out.append(row[0] + space + '|' + space + row[-1])
     return '\n'.join(out)
+
+
+import codewars_test as test
+from solution import cake_visualizer
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it("Basic Test Cases")
+    def basic_test_cases():
+        test.assert_equals(cake_visualizer('/|\\\n\\/ \\/\n\\ | | \\\n/\\/\\/\\/\n/       \\\n/|||||||||\\'), '/|\\\n\\ | /\n\\  |  \\\n/  |  /\n/   |   \\\n/    |    \\')
+        test.assert_equals(cake_visualizer('/|\\'), '/|\\')
+        test.assert_equals(cake_visualizer('/ \\\n/ \\\n/ \\\n/ \\\n/ \\\n/ \\'), '/|\\\n/|\\\n/|\\\n/|\\\n/|\\\n/|\\')
+        test.assert_equals(cake_visualizer('\\         \\\n// |||||||||\\\\/\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n/ /| \\ /\\|\\ /| |/\n/||||||||\\/| /\\||||||\\\\'), '\\    |    \\\n/      |      /\n\\       |       \\\n/       |       /\n/          |          \\')
+        test.assert_equals(cake_visualizer('/         \\\n/         \\\n/         \\\n/         \\\n/         \\\n/         \\'), '/    |    \\\n/    |    \\\n/    |    \\\n/    |    \\\n/    |    \\\n/    |    \\')
