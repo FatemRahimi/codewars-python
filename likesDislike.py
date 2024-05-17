@@ -12,3 +12,14 @@
 # Notes
 # If no button is currently active, return Nothing.
 # If the list is empty, return Nothing.
+
+def like_or_dislike(lst):
+    actual = "Nothing"
+    
+    for action in lst:
+        if action != actual:
+            actual = action
+        else:
+            actual = "Nothing"
+        
+    return actual
