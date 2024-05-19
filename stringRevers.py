@@ -6,3 +6,6 @@
 # Examples
 # '123'   ==>  ['321', '21', '1']
 # 'abcde' ==>  ['edcba', 'dcba', 'cba', 'ba', 'a']
+
+def reverse_slice(s):
+    return [s[::-1][i:] for i in range(len(s))]
