@@ -9,3 +9,11 @@
 
 def reverse_slice(s):
     return [s[::-1][i:] for i in range(len(s))]
+
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(reverse_slice('123'), ['321', '21', '1'])
+        test.assert_equals(reverse_slice('abcde'), ['edcba', 'dcba', 'cba', 'ba', 'a'])
