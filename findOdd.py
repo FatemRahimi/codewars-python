@@ -14,16 +14,7 @@ def find_it(seq):
         if seq.count(elem) % 2 == 1:
             return elem
         
-
-
-        def find_it(seq):
-    nums = set()
-    for num in seq:
-        if num in nums:
-            nums.remove(num)
-        else:
-            nums.add(num)
-    return nums.pop()
+        
         
 
         import codewars_test as test
@@ -46,7 +37,9 @@ def sample_tests():
         
     @test.it("find_it([10]) should return 10 (because it appears 1 time)")
     def _():
-        test.asse
+        test.assert_equals(find_it([10]), 10);
+
+    @test.it("find_it([10, 10, 10]) should return 10 (because it appears 3 times)")
     def _():
         test.assert_equals(find_it([10, 10, 10]), 10);        
         
