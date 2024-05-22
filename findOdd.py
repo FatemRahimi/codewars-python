@@ -46,9 +46,7 @@ def sample_tests():
         
     @test.it("find_it([10]) should return 10 (because it appears 1 time)")
     def _():
-        test.assert_equals(find_it([10]), 10);
-
-    @test.it("find_it([10, 10, 10]) should return 10 (because it appears 3 times)")
+        test.asse
     def _():
         test.assert_equals(find_it([10, 10, 10]), 10);        
         
