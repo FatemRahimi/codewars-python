@@ -58,4 +58,4 @@ def sample_tests():
 
     @test.it("find_it([5,4,3,2,1,5,4,3,2,10,10]) should return 1 (because it appears 1 time)")
     def _():
-       
+        test.assert_equals(find_it([5,4,3,2,1,5,4,3,2,10,10]), 1);
