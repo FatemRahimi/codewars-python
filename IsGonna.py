@@ -15,6 +15,8 @@ def hero(bullets, dragons):
     elif bullets < 2*dragons:
         return False
     import codewars_test as test
+
+    
 from solution import hero
 
 # tested
