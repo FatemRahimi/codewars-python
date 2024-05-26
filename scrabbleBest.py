@@ -10,3 +10,13 @@
 
 # You must return the index of the shortest word which realize the highest score.
 # If the length and the score are the same for two elements, return the index of the first one.
+
+
+from string import ascii_uppercase as uppercase
+
+def get_best_word(points, words):
+    points = dict(zip(uppercase, points))
+    
+    score = lambda word: sum(points[c] for c in word)
+    
+    return words.index(sorted(sorted(words, key=len), key=score, reverse=True)[0])
