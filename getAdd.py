@@ -29,3 +29,10 @@
 
 # Note
 # Note that the same value can appear more than once in the array. In that case, the MAD will be 0.
+
+
+from itertools import combinations
+
+def getting_mad(arr):
+    return  min(abs(a-b) for a,b in combinations(arr,2))
+  
