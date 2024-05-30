@@ -1,16 +1,23 @@
 # DESCRIPTION:
-# In this task, you need to write a function each, that takes an integer number n and a ( possibly empty ) list of integers, and returns a list of every nth element of the input list ( which possibly is the empty list ).
+# The objective is to return all pairs of integers from a given array of integers that have a difference of 2.
 
-# If n < 0, count by abs n from the end of the list.
-# If n == 0, return an empty list.
+# The result array should be sorted in ascending order of values.
+
+# Assume there are no duplicate integers in the array. The order of the integers in the input array should not matter.
 
 # Examples
-# each 0 [1,2,3,4,5,6] = []  
-# each 1 [1,2,3,4,5,6] = [1,2,3,4,5,6]  
-# each (-1) [1,2,3,4,5,6] = [6,5,4,3,2,1]  
-# each 2 [1,2,3,4,5,6] = [2,4,6]  
-# each (-2) [1,2,3,4,5,6] = [5,3,1]  
-# each 3 [1,2] = []  
-# each (-3) [1,2] = []  
-# each 5 [1,2,3,4,5,6,7] = [5]  
-# each (-5) [1,2,3,4,5,6,7] = [3]  
+# [1, 2, 3, 4]  should return [(1, 3), (2, 4)]
+
+# [4, 1, 2, 3]  should also return [(1, 3), (2, 4)]
+
+# [1, 23, 3, 4, 7] should return [(1, 3)]
+
+# [4, 3, 1, 5, 6] should return [(1, 3), (3, 5), (4, 6)]
+def twos_difference(arr):
+    arr = sorted(arr)
+    b = []
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if arr[j] - arr[i] == 2:
+                b.append((arr[i],arr[j]))
+    return b
