@@ -11,3 +11,15 @@
 # First some static tests, later on many random tests too;-)!
 
 # Hope you have fun! :-)
+
+
+def next_higher(x):
+    next = 0
+    if(x):
+        rightOne = x & -(x)
+        nextHigherOneBit = x + rightOne
+        rightOnesPattern = x ^ nextHigherOneBit    
+        rightOnesPattern = rightOnesPattern / rightOne
+        rightOnesPattern = int(rightOnesPattern) >> 2
+        next = nextHigherOneBit | rightOnesPattern
+    return next
