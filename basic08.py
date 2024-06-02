@@ -23,3 +23,18 @@ def next_higher(x):
         rightOnesPattern = int(rightOnesPattern) >> 2
         next = nextHigherOneBit | rightOnesPattern
     return next
+
+
+
+import codewars_test as test
+from solution import next_higher
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(next_higher(128), 256, "next_higher(128)")
+        test.assert_equals(next_higher(1), 2, "next_higher(1)")
+        test.assert_equals(next_higher(1022), 1279, "next_higher(1022)")
+        test.assert_equals(next_higher(127), 191, "next_higher(127)")
+        test.assert_equals(next_higher(1253343), 1253359, "next_higher(1253343)")
