@@ -98,3 +98,78 @@ def bomb_has_been_planted(m, time):
         res = min(res, dist(p_ct, p_k) + dist(p_k, p_b) + 5)
         
     return res 
+
+
+from solution import bomb_has_been_planted
+import codewars_test as test
+
+@test.describe("Example tests")
+def tests():
+    
+    @test.it("No time left")
+    
+    def no_time():
+        map1 = [
+            ["CT", "0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0", "B"]
+        ]
+        test.assert_equals(bomb_has_been_planted(map1, 7), False)
+        
+        map2 = [["CT", "B", "0", "0", "0"]]
+        
+        test.assert_equals(bomb_has_been_planted(map2, 9), False)
+
+    @test.it("Time left without kit")
+    
+    def no_defuse_kit():
+        map3 = [
+            ["CT", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0"],
+            ["0", "0", "0", "B", "0"],
+            ["0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0"]
+        ]
+        
+        test.assert_equals(bomb_has_been_planted(map3, 13), True)
+        
+        map4 = [
+            ["0", "0", "0", "CT"],
+            ["0", "0", "0", "0"],
+            ["B", "0", "0", "0"]
+        ]
+        
+        test.assert_equals(bomb_has_been_planted(map4, 13), True)  
+    
+    @test.it("Defuse kit is needed")
+    
+    def defuse_kit():
+        map5 = [
+            ["0", "0", "0", "0", "0", "0"],
+            ["CT", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "B"],
+            ["0", "0", "0", "0", "0", "0"],
+            ["0", "0", "K", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0"],
+            ["0", "0", "0", "0", "0", "0"]
+        ]
+        
+        test.assert_equals(bomb_has_been_planted(map5, 13), True)
+        
+        
+        map6 = [
+            ["0", "K", "0", "CT"],
+            ["0", "0", "0", "0"],
+            ["0", "0", "0", "0"],
+            ["B", "0", "0", "0"]
+        ]
+        
+        
+        test.assert_equals(bomb_has_been_planted(map6, 12), True) 
