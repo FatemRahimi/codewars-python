@@ -84,3 +84,17 @@
 # Good luck!
 
 # Bingo bango bongo bish bash bosh.
+
+
+def bomb_has_been_planted(m, time):
+    dist = lambda p1,p2: max(abs(p1[0]-p2[0]), abs(p1[1]-p2[1]))
+    
+    p_ct = next((x,y) for x,row in enumerate(m) for y,el in enumerate(row) if el == 'CT')
+    p_b = next((x,y) for x,row in enumerate(m) for y,el in enumerate(row) if el == 'B')
+    p_k = next(((x,y) for x,row in enumerate(m) for y,el in enumerate(row) if el == 'K'), None)
+    
+    res = dist(p_ct, p_b) + 10
+    if p_k: 
+        res = min(res, dist(p_ct, p_k) + dist(p_k, p_b) + 5)
+        
+    return res 
