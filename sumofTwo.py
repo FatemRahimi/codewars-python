@@ -14,7 +14,4 @@
 # 3- Add (-14,-16) ==> return (-30)
 
 
-def add(x, y):
-    if y == 0:
-        return x
-    return add(x ^ y, (x & y) << 1)
+
