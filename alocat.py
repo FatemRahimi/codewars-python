@@ -17,5 +17,10 @@
 
 
 def allocate_rooms(customers):
-    ## Write code here
-    return []
+    res = [0] * len(customers)
+    dep = [0] * len(customers)
+    for i, (a, d) in sorted(enumerate(customers), key = lambda x: x[1]):
+        n = next(r for r, d in enumerate(dep) if d < a)
+        dep[n] = d
+        res[i] = n + 1
+    return res
