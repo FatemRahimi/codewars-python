@@ -13,3 +13,9 @@
 # So any of [1,2,1,2], [1,2,2,1], [2,1,2,1], [2,1,1,2] is a valid solution.
 
 # NOTE: The list of customers is not necessarily ordered by arrival_time.
+
+
+
+def allocate_rooms(customers):
+    ## Write code here
+    return []
