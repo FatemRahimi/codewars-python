@@ -11,3 +11,13 @@
 # Suppose customers is [(1,5), (2,4), (6,8), (7,7)].
 # Clearly customers 1 and 2 cannot get the same room. Customer 3 can use the same room as either of them, because they both leave before customer 3 arrives. Then customer 4 can be given the other room.
 # So any of [1,2,1,2], [1,2,2,1], [2,1,2,1], [2,1,1,2] is a valid solution.""
+
+
+def allocate_rooms(customers):
+    res = [0] * len(customers)
+    dep = [0] * len(customers)
+    for i, (a, d) in sorted(enumerate(customers), key = lambda x: x[1]):
+        n = next(r for r, d in enumerate(dep) if d < a)
+        dep[n] = d
+        res[i] = n + 1
+    return res
