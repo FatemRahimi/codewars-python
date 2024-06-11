@@ -26,17 +26,7 @@ def allocate_rooms(customers):
 
 import heapq
 
-def allocate_rooms(customers):
-    rooms, h, res = 0, [], [0] * len(customers)
-    for i, (a, b) in sorted(enumerate(customers), key = lambda p: p[1]):
-        if not h or h[0][0] >= a:
-            rooms += 1
-            res[i] = rooms
-            heapq.heappush(h, (b, rooms))
-        else:
-            res[i] = h[0][1]
-            heapq.heappushpop(h, (b, h[0][1]))
-    return res
+
 
 
 import codewars_test as test
