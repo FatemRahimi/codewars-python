@@ -68,3 +68,21 @@ def example_tests():
         test.expect(result, message)
         
 
+@test.describe('Special Cases')
+def special_cases():
+    
+    ## One customer - solution is [1]
+    special_case1 = [(5,100)]
+    result, message = validate_solution(special_case1, allocate_rooms(special_case1), 1)
+    test.expect(result, message)
+        
+    ## Non-overlapping customers, only 1 room needed. Solution is [1,1,1,1,1,1,1]
+    special_case2 = [(15,19),(1,2),(3,5),(10,10),(6,9),(20,99),(101,101)]
+    result, message = validate_solution(special_case2, allocate_rooms(special_case2), 1)
+    test.expect(result, message)
+    
+    ## All customers overlap, so each needs a new room - solution is any permutation of [1,2,3,4,5]
+    special_case3 = [(4,7),(1,10),(2,5),(3,4),(3,12)]
+    result, message = validate_solution(special_case3, allocate_rooms(special_case3), 5)
+    test.expect(result, message)        
+    
