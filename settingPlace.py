@@ -37,3 +37,43 @@ def set_table(the_dead):
         p2, d2 = find_seat(p, 1)
         table[p1 if d1 <= d2 else p2] = name
     return table
+
+
+from solution import set_table
+import codewars_test as test
+
+@test.describe("set_table")
+def tests():
+
+    @test.it("Sample Tests")
+    def sample_tests():
+
+        # Test 1 ~ Artlu only
+        the_dead = ("Artlu",)
+        submitted = set_table(the_dead)
+        expected = ["_____", "_____", "_____", "_____", "_____", "_____", "Artlu", "_____", "_____", "_____", "_____", "_____"]
+        test.assert_equals(submitted, expected)
+        
+        # Test 2 ~ Artlu, Breca, Cityl, and Dedaf
+        the_dead = ("Artlu", "Breca", "Cityl", "Dedaf")
+        submitted = set_table(the_dead)
+        expected = ["Cityl", "_____", "_____", "_____", "_____", "Breca", "Artlu", "_____", "_____", "_____", "_____", "Dedaf"]
+        test.assert_equals(submitted, expected)
+        
+        # Test 3 ~ All Favor the Same Feature
+        the_dead = ("Sevap", "Syolc", "Sgulg", "Stolb", "Sknoh", "Spord", "Sgnaf", "Shcat", "Sknit", "Snirg", "Senin", "Sliob")    
+        submitted = set_table(the_dead)
+        expected = ["Sgnaf", "Sknit", "Senin", "Sliob", "Snirg", "Shcat", "Spord", "Stolb", "Syolc", "Sevap", "Sgulg", "Sknoh"]
+        test.assert_equals(submitted, expected)
+        
+        # Test 4 ~ Example From the Description
+        the_dead = ["Yojne", "Xenna", "Verap", "Ebyam", "Teseb", "Ycuag", "Onets", "Skcaw", "Yrovi", "Tpets", "Lizuf", "Girnu"]
+        submitted = set_table(the_dead)
+        expected = ["Teseb", "Onets", "Verap", "Xenna", "Ebyam", "Ycuag", "Yojne", "Yrovi", "Lizuf", "Skcaw", "Girnu", "Tpets"]
+        test.assert_equals(submitted, expected)
+        
+        # Test 5 ~ Too Many Ghosts to Seat
+        the_dead = ['Egdob', 'Liame', 'Skceg', 'Yesba', 'Cinid', 'Sallo', 'Sumac', 'Triks', 'Sipat', 'Elona', 'Sreod', 'Deyab', 'Dlaps', 'Nevey', 'Htron']
+        submitted = set_table(the_dead)
+        expected = ["Cinid", "Sreod", "Elona", "Egdob", "Deyab", "Yesba", "Liame", "Sipat", "Sallo", "Skceg", "Sumac", "Triks"]
+        test.assert_equals(submitted, expected)
