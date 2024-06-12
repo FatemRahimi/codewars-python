@@ -19,3 +19,21 @@
 # Every morning, the Elders give you a List of the Dead naming people who throughout the past had died on that date, although a person's name is only included on the list if currently living members of society have made any donations in their name for this year.
 
 # Your Task
+
+
+CORNERS = {letter: 3 * i for i, letters in enumerate(("QUTHCRDMZ", "WEVOXING", "JFABKPLY", "S")) for letter in letters}
+
+def set_table(the_dead):
+    n = 12
+    table = ['_____'] * n
+    def find_seat(i, d):
+        for j in range(n):
+            k = (i + d * j) % n
+            if table[k] == '_____':
+                return k, j
+    for name in the_dead[:12]:
+        p = CORNERS[name[0]]
+        p1, d1 = find_seat(p, -1)
+        p2, d2 = find_seat(p, 1)
+        table[p1 if d1 <= d2 else p2] = name
+    return table
