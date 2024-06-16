@@ -26,3 +26,5 @@ def has_two_cube_sums(n):
                     return True
                 sum.append([i , x])
     return False
+
+
