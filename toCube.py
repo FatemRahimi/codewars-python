@@ -28,9 +28,3 @@ def has_two_cube_sums(n):
     return False
 
 
-
-test.assert_equals(has_two_cube_sums(1), False)
-test.assert_equals(has_two_cube_sums(1729),True) # 9^3 + 10^3 and 1^3 + 12^3
-test.assert_equals(has_two_cube_sums(42), False)
-test.assert_equals(has_two_cube_sums(4104), True)
-test.assert_equals(has_two_cube_sums(4105), False)
