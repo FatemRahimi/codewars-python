@@ -8,3 +8,12 @@
 
 # two_sum([1, 2, 3], 4) # returns (0, 2) or (2, 0)
 # two_sum([3, 2, 4], 6) # returns (1, 2) or (2, 1)
+
+
+
+
+def two_sum(nums, t):
+    for i, x in enumerate(nums):
+        for j, y in enumerate(nums):
+            if i != j and x + y == t:
+                return [i, j]
