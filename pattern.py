@@ -59,3 +59,15 @@ def christmas_tree(height: int) -> str:
     line_width = len(lines[-1])
     lines.append('###')
     return '\r\n'.join(line.center(line_width).rstrip() for line in lines)
+
+    import codewars_test as test
+from solution import christmas_tree
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(christmas_tree(5),"  *\r\n ***\r\n*****\r\n ###")
+        test.assert_equals(christmas_tree(10),"    *\r\n   ***\r\n  *****\r\n   ***\r\n  *****\r\n *******\r\n  *****\r\n *******\r\n*********\r\n   ###")
+        test.assert_equals(christmas_tree(8),"   *\r\n  ***\r\n *****\r\n  ***\r\n *****\r\n*******\r\n  ###")
+        test.assert_equals(christmas_tree(2),"")
