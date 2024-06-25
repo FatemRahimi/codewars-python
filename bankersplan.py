@@ -30,3 +30,13 @@
 # For the last case you can find below the amounts of his account at the beginning of each year:
 # 100000, 91815, 83457, 74923, 66211, 57318, 48241, 38977, 29523, 19877, 10035, -5
 # f11 = -5 so he has no way to withdraw something for his living in year 12.
+
+def fortune(money, interest, withdraw, years, inflation):
+    interest = 1 + (interest / 100)
+    inflation = 1 + (inflation / 100)
+    for _ in range(years - 1):
+        money = int(money * interest - withdraw)
+        if money < 0:
+            return False
+        withdraw *= inflation
+    return True
