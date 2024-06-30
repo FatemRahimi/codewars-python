@@ -64,3 +64,22 @@
 # -------      -------      -------
 
 # DONE. Return "fbadec".
+
+
+from copy import deepcopy
+
+def funnel_out(funnel: list) -> str:
+    funnel = deepcopy(funnel)
+    depth = len(funnel)
+    return ''.join(drip(funnel, -1, 0) for _ in range(depth * (depth + 1) // 2))
+
+def drip(funnel: list, row: int, col: int) -> str:
+    if funnel[row][col] == '~': return '~'
+    result = funnel[row][col]
+    if abs(row) == len(funnel):
+        funnel[row][col] = '~'
+    elif funnel[row - 1][col] > funnel[row - 1][col + 1]:
+        funnel[row][col] = drip(funnel, row - 1, col + 1)
+    else:
+        funnel[row][col] = drip(funnel, row - 1, col)
+    return result
