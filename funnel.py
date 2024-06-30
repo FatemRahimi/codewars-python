@@ -83,3 +83,9 @@ def drip(funnel: list, row: int, col: int) -> str:
     else:
         funnel[row][col] = drip(funnel, row - 1, col)
     return result
+
+
+    test.assert_equals(funnel_out([["q"]]),"q")
+test.assert_equals(funnel_out([["b","c"],["a"]]),"abc")
+test.assert_equals(funnel_out([["d","a","c"],["b","e"],["f"]]),"fbadec")
+test.assert_equals(funnel_out([["a","e","c","f"],["d","i","h"],["j","g"],["b"]]),"bghcfiejda")
