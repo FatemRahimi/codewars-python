@@ -28,3 +28,20 @@ def countFeelings(letters, feelings):
     counter = Counter(letters)
     result = sum(not(Counter(feeling) - counter) for feeling in feelings)
     return "{} feeling{}.".format(result, "s" if result != 1 else "")
+
+
+    import codewars_test as test
+try: 
+    from solution import countFeelings as count_feelings
+except:
+    from solution import count_feelings
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(count_feelings('longi', ['anger', 'awe', 'joy', 'longing', 'grief']), '0 feelings.');
+        test.assert_equals(count_feelings('yliausoenvjw', ['anger', 'awe', 'joy', 'love', 'grief']), '3 feelings.');
+        test.assert_equals(count_feelings('angerw', ['anger', 'awe', 'joy', 'love', 'grief']), '2 feelings.');
+        test.assert_equals(count_feelings('griefgriefgrief', ['anger', 'awe', 'joy', 'love', 'grief']), '1 feeling.');
+        test.assert_equals(count_feelings('abcdkasdfvkadf', ['desire', 'joy', 'shame', 'longing', 'fear']), '0 feelings.');
