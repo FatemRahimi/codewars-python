@@ -20,3 +20,11 @@
 # If the feeling can be formed several times from different letters - plus one to the answer.
 
 # Eeach letter in string participates in the formation of all feelings. 'angerw' -> 2 feelings: 'anger' and 'awe'.
+
+
+from collections import Counter
+
+def countFeelings(letters, feelings):
+    counter = Counter(letters)
+    result = sum(not(Counter(feeling) - counter) for feeling in feelings)
+    return "{} feeling{}.".format(result, "s" if result != 1 else "")
