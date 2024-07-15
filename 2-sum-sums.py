@@ -12,7 +12,7 @@
 # Example
 # Array = [2, 4, 6, 10], target range is [6, 10)
 
-# target = 6  =>  (2, 4)
+# target = 6  =>  
 # target = 7  =>  no pair
 # target = 8  =>  (2, 6)
 # target = 9  =>  no pair
