@@ -1,4 +1,4 @@
-# 2-Sum is a common task to find the pair of integers in the array such that their sum equals to the target.
+#  is a common task to find the pair of integers in the array such that their sum equals to the target.
 
 # array = [1,2,3,4,5]
 # target = 7
