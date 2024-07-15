@@ -1,6 +1,6 @@
 # sum is a common task to find the pair of integers in the array such that their sum equals to the target.
 
-# array = [1,2,3,4,5]
+# array
 # target = 7
 
 # Pair is (2, 5)
