@@ -25,7 +25,7 @@ from solution import hero
 def fixed_tests():
     @test.it('Basic Test Cases')
     def basic_test_cases():
-        test.assert_equals(hero(10, 5), false)
+        test.assert_equals(hero(10, 5), true)
         test.assert_equals(hero(7, 4), False)
         test.assert_equals(hero(4, 5), False)
         test.assert_equals(hero(100, 40), True)
